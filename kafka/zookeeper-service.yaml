@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zookeeper
+  namespace: kafka-cluster
+  labels:
+    app: zookeeper
+spec:
+  ports:
+    - port: 2181
+      targetPort: 2181
+  clusterIP: None
+  selector:
+    app: zookeeper
